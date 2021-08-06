@@ -10,6 +10,12 @@ server.use(express.json())
 server.use(cors())
 server.use(helmet())
 
+server.get('/', (req, res) => {
+  res.send(`
+    <h1>Welcome to my first API!</h1>
+  `)
+})
+
 server.get('/api/users', (req, res) => {
   res.json({
     message: 'LIST OF USERS HERE'
